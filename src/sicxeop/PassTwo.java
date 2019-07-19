@@ -171,31 +171,23 @@ int opcode=0,flags=0,disp=0;
             }
                              else {
                                   
-                                     flags += 4;
+                                    flags += 4;
                                     displacement = Integer.parseInt(ta, 16) - Integer.parseInt(pc, 16);
                                     disp = displacement;
             
                               }
-                             String x=("00" + Integer.toHexString(opcode)).substring(Integer.toHexString(opcode).length());
-            String z=("000" + Integer.toHexString(disp)).substring(Integer.toHexString(disp).length());
-            fullStack.get(i)[4]=x+Integer.toHexString(flags)+z;
-
-                                
-                                
-                             
+                              String x=("00" + Integer.toHexString(opcode)).substring(Integer.toHexString(opcode).length());
+                              String z=("000" + Integer.toHexString(disp)).substring(Integer.toHexString(disp).length());
+                              fullStack.get(i)[4]=x+Integer.toHexString(flags)+z;
+                               
                          }
-                         
-                             
-                           
-                         
-                         
+                       
                      }
                      
        }
                  else 
                      fullStack.get(i)[4]="No Object Code";
-                 
- 
+        
     }
     
        
@@ -279,8 +271,6 @@ int opcode=0,flags=0,disp=0;
                 }
             }
         }
-       
-           
            HTE.add("E^"+fullStack.get(0)[0]);
         }
        
