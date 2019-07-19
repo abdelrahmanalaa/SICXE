@@ -15,41 +15,31 @@ public class SICXEOP {
          
 
          
-        JFileChooser chooser = new JFileChooser();
-String path="";
-                      
-                        chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-                        chooser.setAcceptAllFileFilterUsed(false);
-                        chooser.addChoosableFileFilter(new FileFilter() {
-                            @Override
-                            public boolean accept(File f) {
-                                return f.isDirectory() || f.getName().toLowerCase().endsWith(".txt");
-                            }
+      JFileChooser chooser = new JFileChooser();
+      String path="";               
+      chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+      chooser.setAcceptAllFileFilterUsed(false);
+      chooser.addChoosableFileFilter(new FileFilter() {
+          @Override
+          public boolean accept(File f) {
+              return f.isDirectory() || f.getName().toLowerCase().endsWith(".txt");
+          }
 
-                            @Override
-                            public String getDescription() {
-                                return "Text Files (*.txt)";
-                            }
-                        });
+          @Override
+          public String getDescription() {
+              return "Text Files (*.txt)";
+          }
+      });
                   
- switch (chooser.showOpenDialog(chooser)) {
-                        case JFileChooser.APPROVE_OPTION:
-                            
+    switch (chooser.showOpenDialog(chooser)) {
+                           case JFileChooser.APPROVE_OPTION:
                                  path = chooser.getSelectedFile().getAbsolutePath();
-                           break;
-                    }
- FORMATANDOPCODEANDREGISTERS.start();
- FORMATANDOPCODEANDREGISTERS format=new FORMATANDOPCODEANDREGISTERS();
- PassOne passOne= new PassOne(path);
- 
-
- 
- 
- 
- 
+                                 break;
+     }
+    FORMATANDOPCODEANDREGISTERS.start();
+    FORMATANDOPCODEANDREGISTERS format=new FORMATANDOPCODEANDREGISTERS();
+    PassOne passOne= new PassOne(path);
  
     }
-    
-
     
 }
